@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delhi Metro Route Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-container">
+          <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="8" width="18" height="10" rx="2"/>
+              <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
+              <line x1="3" y1="13" x2="21" y2="13"/>
+              <circle cx="8" cy="18" r="1"/>
+              <circle cx="16" cy="18" r="1"/>
+            </svg>
+          </div>
+          <div class="header-text">
+            <h1>Delhi Metro</h1>
+            <p>Route Finder</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Journey Planner Card -->
+      <div class="planner-card">
+        <div class="card-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <h2>Plan Your Journey</h2>
+        </div>
+
+        <div class="journey-inputs">
+          <!-- From Station -->
+          <div class="input-section">
+            <label class="input-label">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <span>FROM</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="source" class="station-select">
+                <option value="">Select source station</option>
+              </select>
+              <svg class="dropdown-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Swap Button -->
+          <button id="swapBtn" class="swap-btn" title="Swap stations">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <polyline points="19 12 12 19 5 12"/>
+              <polyline points="5 12 12 5 19 12"/>
+            </svg>
+          </button>
+
+          <!-- To Station -->
+          <div class="input-section">
+            <label class="input-label">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>TO</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="destination" class="station-select">
+                <option value="">Select destination station</option>
+              </select>
+              <svg class="dropdown-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Find Route Button -->
+          <button id="findBtn" class="find-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.35-4.35"/>
+            </svg>
+            <span>Find Best Route</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Container -->
+      <div id="result" class="result-container"></div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data/metroData.js"></script>
+  <script src="logic/helpers.js"></script>
+  <script src="logic/graph.js"></script>
+  <script src="logic/routeFinder.js"></script>
+  <script src="ui/renderRoute.js"></script>
+  <script src="ui/uiController.js"></script>
+</body>
+</html>
