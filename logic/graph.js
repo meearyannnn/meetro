@@ -1,7 +1,7 @@
 // ============================================
 // GRAPH BUILDER - (Station + Line) as Nodes
 // ============================================
-import { metroData } from './data/metrodata.js';
+
 
 const graph = {};
 const stationLines = {}; // Track which lines serve each station

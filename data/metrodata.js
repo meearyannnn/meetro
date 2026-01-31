@@ -386,15 +386,3 @@ const metroData = {
     ]
   }
 };
-
-// Export for different module systems
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = metroData;
-}
-
-if (typeof window !== 'undefined') {
-  window.metroData = metroData;
-}
-
-// ES6 export
-export default metroData;
