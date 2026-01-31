@@ -1,6 +1,8 @@
 // ============================================
 // UI CONTROLLER
 // ============================================
+import { metroData } from "./data/metrodata.js";
+console.log("METRO DATA LOADED", metroData);
 
 const sourceSelect = document.getElementById("source");
 const destSelect = document.getElementById("destination");
